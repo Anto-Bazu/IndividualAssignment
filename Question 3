@@ -1,0 +1,117 @@
+//A university has students taking ICT, Law and Business courses. In the Faculty of ICT, there are Certificate, Diploma and a Degree courses (BSC-IT). BSC-IT has three stages: Stage 1, Stage 2 and Stage 3. 
+//(i) Briefly explain how inheritance can assist in the capture and processing of student details in the above scenario.
+//(ii) Develop a program to implement the design in (i)
+
+#include <iostream>
+using namespace std;
+
+// Course is the parent class
+class Course {
+    protected:
+        string courseName;
+
+    public:
+        Course(string name) : courseName(name) {}
+        virtual void print() = 0;
+};
+
+// Child classes of Course
+class ICT : public Course {
+    public:
+        ICT(string name) : Course(name) {}
+        void print() { cout << "Course: " << courseName << " - Field: ICT\n"; }
+};
+
+class Law : public Course {
+    public:
+        Law(string name) : Course(name) {}
+        void print() { cout << "Course: " << courseName << " - Field: Law\n"; }
+};
+
+class Business : public Course {
+    public:
+        Business(string name) : Course(name) {}
+        void print() { cout << "Course: " << courseName << " - Field: Business\n"; }
+};
+
+// Child classes of ICT
+class Cert : public ICT {
+    public:
+        Cert(string name) : ICT(name) {}
+        void print() { cout << "Course: " << courseName << " - Field: ICT - Level: Certificate\n"; }
+};
+
+class Dip : public ICT {
+    public:
+        Dip(string name) : ICT(name) {}
+        void print() { cout << "Course: " << courseName << " - Field: ICT - Level: Diploma\n"; }
+};
+
+// Child class of ICT and Parent class of BSc-IT
+class BSc_IT : public ICT {
+    public:
+        BSc_IT(string name) : ICT(name) {}
+        void print() { cout << "Course: " << courseName << " - Field: ICT - Level: Degree - Type: BSc-IT\n"; }
+};
+
+// Child classes of BSc-IT
+class Stage_1 : public BSc_IT {
+    public:
+        Stage_1(string name) : BSc_IT(name) {}
+        void print() { cout << "Course: " << courseName << " - Field: ICT - Level: Degree - Type: BSc-IT - Stage: 1\n"; }
+};
+
+class Stage_2 : public BSc_IT {
+    public:
+        Stage_2(string name) : BSc_IT(name) {}
+        void print() { cout << "Course: " << courseName << " - Field: ICT - Level: Degree - Type: BSc-IT - Stage: 2\n"; }
+};
+
+class Stage_3 : public BSc_IT {
+    public:
+        Stage_3(string name) : BSc_IT(name) {}
+        void print() { cout << "Course: " << courseName << " - Field: ICT - Level: Degree - Type: BSc-IT - Stage: 3\n"; }
+};
+
+int main() {
+    // Create objects of the different classes and call their functions
+    Course *c1 = new ICT("Information and Communication Technology");
+    c1->print();
+    
+    Course *c2 = new Law("Legal Studies");
+    c2->print();
+    
+    Course *c3 = new Business("Business Administration");
+    c3->print();
+    
+    Course *c4 = new Cert("Certificate in Information Technology");
+    c4->print();
+    
+    Course *c5 = new Dip("Diploma in Information Technology");
+    c5->print();
+    
+    Course *c6 = new BSc_IT("BSc in Information Technology");
+    c6->print();
+    
+    Course *c7 = new Stage_1("Programming I");
+    c7->print();
+    
+    Course *c8 = new Stage_2("Data Structures and Algorithms");
+    c8->print();
+    
+    Course *c9 = new Stage_3("Software Engineering");
+    c9->print();
+    
+    // Delete the dynamically allocated memory
+    delete c1;
+    delete c2;
+    delete c3;
+    delete c4;
+    delete c5;
+    delete c6;
+    delete c7;
+    delete c8;
+    delete c9;
+    
+    return 0;
+}
