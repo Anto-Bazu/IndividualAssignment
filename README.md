@@ -1,6 +1,37 @@
 # IndividualAssignment
 This repo contains assignments that I have done individually while pursuing my course work
 
+#Question 2
+This program is designed to demonstrate the implementation of inheritance in C++. It consists of two classes: Person and Student.
+
+Person Class
+The Person class is a parent class that contains three data members age, firstname and lastname. It has two member methods, getValues() and setValues(), which can be used to retrieve and modify the values of the data members, respectively. Additionally, the Person class has a constructor that initializes all of its data members when an object of the class is created.
+
+Student Class
+The Student class is a child class that inherits from the Person class. In addition to the data members inherited from the Person class, Student class has two additional data members: institution and year. It also has a registrationNumber data member. The Student class has its constructor that initializes all the data members including the data members inherited from the Person class.
+
+Class Definitions
+Person Class
+Data Members
+age: an integer representing the age of the person
+firstname: a string representing the first name of the person
+lastname: a string representing the last name of the person
+Member Methods
+getValues(): a member method that returns the values of the data members
+setValues(): a member method that modifies the values of the data members
+Constructor: initializes all the data members
+Student Class
+Data Members
+age: an integer representing the age of the person
+firstname: a string representing the first name of the person
+lastname: a string representing the last name of the person
+institution: a string representing the institution where the student is enrolled
+year: an integer representing the year of study of the student
+registrationNumber: a string representing the registration number of the student
+Member Methods
+Constructor: initializes all the data members including the data members inherited from the Person class.
+
+#Question 3
 This C++ program demonstrates the concept of inheritance in object-oriented programming. It simulates a university registration system for courses and students.
 
 The program creates a hierarchy of classes using inheritance, with the parent class being Course and child classes ICT, Law, and Business. The ICT class is further subclassed into Cert, Dip, and BSc-IT. The BSc-IT class is then subclassed into Stage_1, Stage_2, and Stage_3.
