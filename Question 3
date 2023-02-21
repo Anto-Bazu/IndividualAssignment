@@ -1,7 +1,3 @@
-//A university has students taking ICT, Law and Business courses. In the Faculty of ICT, there are Certificate, Diploma and a Degree courses (BSC-IT). BSC-IT has three stages: Stage 1, Stage 2 and Stage 3. 
-//(i) Briefly explain how inheritance can assist in the capture and processing of student details in the above scenario.
-//(ii) Develop a program to implement the design in (i)
-
 #include <iostream>
 using namespace std;
 
