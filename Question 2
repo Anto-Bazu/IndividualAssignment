@@ -1,6 +1,3 @@
-//(i) Define a class called person with the members age, firstname and lastname and two member methods getValues and setValues as well as a constructor to initialise all the class data members
-//(ii) Define a class Student that inherits the Person class but adds member variables institution, year (year of study) and registration number.
-
 #include <iostream>
 
 using namespace std;
