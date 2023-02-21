@@ -1,0 +1,80 @@
+//(i) Define a class called person with the members age, firstname and lastname and two member methods getValues and setValues as well as a constructor to initialise all the class data members
+//(ii) Define a class Student that inherits the Person class but adds member variables institution, year (year of study) and registration number.
+
+#include <iostream>
+
+using namespace std;
+
+// base class
+class Person {
+protected:
+    int age;
+    string firstname;
+    string lastname;
+public:
+    // constructor to initialize the class data members
+    Person(int a, string fn, string ln) {
+        age = a;
+        firstname = fn;
+        lastname = ln;
+    }
+    // method to set the class data members
+    void setValues(int a, string fn, string ln) {
+        age = a;
+        firstname = fn;
+        lastname = ln;
+    }
+    // method to get and print the class data members
+    void getValues() {
+        cout << "Age: " << age << endl;
+        cout << "First Name: " << firstname << endl;
+        cout << "Last Name: " << lastname << endl;
+    }
+};
+
+// derived class
+class Student : public Person {
+protected:
+    string institution;
+    int year;
+    string registration_number;
+public:
+    // constructor to initialize the class data members
+    Student(int a, string fn, string ln, string inst, int y, string regno) : Person(a, fn, ln) {
+        institution = inst;
+        year = y;
+        registration_number = regno;
+    }
+    // method to set the class data members
+    void setValues(int a, string fn, string ln, string inst, int y, string regno) {
+        age = a;
+        firstname = fn;
+        lastname = ln;
+        institution = inst;
+        year = y;
+        registration_number = regno;
+    }
+    // method to get and print the class data members
+    void getValues() {
+        cout << "Age: " << age << endl;
+        cout << "First Name: " << firstname << endl;
+        cout << "Last Name: " << lastname << endl;
+        cout << "Institution: " << institution << endl;
+        cout << "Year of Study: " << year << endl;
+        cout << "Registration Number: " << registration_number << endl;
+    }
+};
+
+// main function
+int main() {
+    // create an instance of the Student class
+    Student s(20, "Anthony", "Karwe", "Jkuat", 3, "ENE211-0287/2020");
+    // print out the initial values of the class data members
+    s.getValues();
+    // update the values of the class data members
+    s.setValues(21, "Erin", "Wachira", "Jkuat", 3, "ENE211-0003/2020");
+    // print out the updated values of the class data members
+    s.getValues();
+    // return 0 to indicate successful completion of the program
+    return 0;
+}
