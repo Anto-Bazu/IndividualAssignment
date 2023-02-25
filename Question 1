@@ -1,0 +1,56 @@
+#include <iostream>
+#include <string>
+
+class Computer {
+public:
+    Computer(std::string name, std::string ip_address, std::string os)
+        : name(name), ip_address(ip_address), os(os) {}
+
+    void ping(std::string ip_address) {
+        std::cout << "Pinging " << ip_address << " from " << this->ip_address << std::endl;
+    }
+
+protected:
+    std::string name;
+    std::string ip_address;
+    std::string os;
+};
+
+class Server : public Computer {
+public:
+    Server(std::string name, std::string ip_address, std::string os, int num_users)
+        : Computer(name, ip_address, os), num_users(num_users) {}
+
+    void add_user() {
+        num_users++;
+        std::cout << "Added 1 user to " << name << ". Total users: " << num_users << std::endl;
+    }
+
+private:
+    int num_users;
+};
+
+class Client : public Computer {
+public:
+    Client(std::string name, std::string ip_address, std::string os, std::string server_ip)
+        : Computer(name, ip_address, os), server_ip(server_ip) {}
+
+    void connect() {
+        std::cout << "Connected to server at " << server_ip << " from " << ip_address << "." << std::endl;
+    }
+
+private:
+    std::string server_ip;
+};
+
+int main() {
+    Server server("Web Server", "192.168.0.10", "Linux", 5);
+    Client client("Laptop", "192.168.0.11", "Windows", "192.168.0.10");
+
+    server.ping(client.ip_address);
+    client.connect();
+
+    server.add_user();
+
+    return 0;
+}
