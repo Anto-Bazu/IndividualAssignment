@@ -1,6 +1,39 @@
 # IndividualAssignment
 This repo contains assignments that I have done individually while pursuing my course work
 
+#Question 1
+Computer Server Client Program
+This program is written in C++ and consists of three classes: Computer, Server, and Client. The Computer class is the base class for the Server and Client classes, and contains the attributes and methods that are common to both subclasses. The Server and Client classes inherit from the Computer class and add additional attributes and methods that are specific to their respective roles.
+
+Class Descriptions
+Computer
+The Computer class has the following attributes:
+
+name (string): The name of the computer.
+ip_address (string): The IP address of the computer.
+os (string): The operating system running on the computer.
+The Computer class has the following method:
+
+ping: Takes a string argument ip_address and prints a message indicating that the computer is pinging the specified IP address.
+Server
+The Server class is a subclass of Computer, and has the following additional attribute:
+
+num_users (int): The number of users connected to the server.
+The Server class has the following additional method:
+
+add_user: Increments the num_users attribute by 1 and prints a message indicating that a user has been added to the server.
+Client
+The Client class is a subclass of Computer, and has the following additional attribute:
+
+server_ip (string): The IP address of the server that the client is connected to.
+The Client class has the following additional method:
+
+connect: Prints a message indicating that the client has connected to the server.
+How to Use
+To use this program, simply compile the code and run the resulting executable. The main function creates an instance of the Server class and an instance of the Client class, and calls their respective methods to demonstrate their functionality.
+
+The program will output messages indicating that the server is pinging the client, that the client has connected to the server, and that a user has been added to the server.
+
 #Question 2
 This program is designed to demonstrate the implementation of inheritance in C++. It consists of two classes: Person and Student.
 
